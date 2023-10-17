@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>코드찾기</title>
+        <link rel="stylesheet" href="/style/reset.css" />
+        <link rel="stylesheet" href="/style/index.css" />
+    </head>
+    <body>
+        <div class="index_wrap">
+            <header>
+                <ul>
+                    <li><a href="#area1">코드 찾기</a></li>
+                    <li><a href="#area2">샵 붙는 순서</a></li>
+                    <li><a href="#area3">검색하기</a></li>
+                </ul>
+            </header>
+
+            <section id="area1">
+                <h4>조표</h4>
+                <div class="keyImg"></div>
+            </section>
+            <section id="area2">
+                <h4>반음 붙는 순서</h4>
+                <div class="chImg"></div>
+                <p># - 파, 도, 솔, 레, 라, 미, 시</p>
+                <p>각각 F, C, G, D, A, E, B</p>
+                <p>b - 시, 미, 라, 레, 솔, 도, 파</p>
+                <p>각각 B, E, A, D, G, C, F</p>
+            </section>
+            <section id="area3">
+                <h4>맞춰보기</h4>
+                <form id="chordForm">
+                    <input type="text" placeholder="코드를 입력하세요(영문)" id="chordInput" />
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="result">
+                    <p id="chord">?</p>
+                    코드는 샵
+                    <p id="sharp">?</p>
+                    개, 플랫
+                    <p id="flat">?</p>
+                    개 입니다.
+                </div>
+            </section>
+        </div>
+
+        <script>
+            document.getElementById('chordForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const chord = document.getElementById('chordInput').value;
+                let sharpCount = '0';
+                let flatCount = '0';
+
+                switch (chord) {
+                    case 'C':
+                        sharpCount = 0;
+                        flatCount = 0;
+                        break;
+
+                    case 'D':
+                        sharpCount = 2;
+                        flatCount = 0;
+                        break;
+
+                    case 'E':
+                        sharpCount = 4;
+                        flatCount = 0;
+                        break;
+
+                    case 'F':
+                        sharpCount = 0;
+                        flatCount = 1;
+                        break;
+
+                    case 'G':
+                        sharpCount = 1;
+                        flatCount = 0;
+                        break;
+
+                    case 'A':
+                        sharpCount = 3;
+                        flatCount = 0;
+                        break;
+
+                    case 'B':
+                        sharpCount = 5;
+                        flatCount = 0;
+                        break;
+
+                    case 'Db':
+                        sharpCount = 0;
+                        flatCount = 5;
+                        break;
+
+                    case 'Eb':
+                        sharpCount = 0;
+                        flatCount = 3;
+                        break;
+
+                    case 'F#':
+                        sharpCount = 6;
+                        flatCount = 0;
+                        break;
+
+                    case 'Gb':
+                        sharpCount = 0;
+                        flatCount = 6;
+                        break;
+
+                    case 'Ab':
+                        sharpCount = 0;
+                        flatCount = 4;
+                        break;
+
+                    case 'Bb':
+                        sharpCount = 0;
+                        flatCount = 2;
+                        break;
+
+                    // C#의 경우는 매우 드물게 사용되지만 추가하고 싶다면 다음과 같이 할 수 있습니다.
+                    case 'C#':
+                        sharpCount = 7;
+                        flatCount = 0;
+                        break;
+
+                    default:
+                        sharpCount = '?';
+                        flatCount = '?';
+                        break;
+                }
+
+                // 결과 업데이트
+                document.getElementById('chord').innerText = chord;
+                document.getElementById('sharp').innerText = sharpCount;
+                document.getElementById('flat').innerText = flatCount;
+            });
+        </script>
+    </body>
+</html>
