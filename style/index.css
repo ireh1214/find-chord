@@ -190,5 +190,58 @@ body {
 .index_wrap section:nth-child(4) .checkbox_inner li input[type=checkbox] {
   width: 40px;
   height: 40px;
-  margin-left: 8px;
+  margin-left: 34px;
+  position: relative;
+}
+.index_wrap section:nth-child(4) .checkbox_inner li input[type=checkbox]:checked::before {
+  content: "#";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 24px;
+  color: blue;
+}
+.index_wrap section:nth-child(5) ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.index_wrap section:nth-child(5) ul li {
+  width: 47%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.index_wrap section:nth-child(5) ul li:hover {
+  border: 1px solid #333;
+}
+.index_wrap section:nth-child(5) ul li p:nth-child(1) {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.index_wrap section:nth-child(5) ul li p:nth-child(2) {
+  font-size: 12px;
 }
