@@ -58,6 +58,23 @@ body {
         box-shadow: 0 0 20px 0 rgba(155, 157, 158, 0.2);
         padding: 24px;
 
+        &#opening {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .music_img {
+                width: 100px;
+                height: 100px;
+                background-image: url('../img/sound.jpg');
+            }
+        }
+
         h4 {
             width: 100%;
             font-size: 16px;
@@ -206,6 +223,26 @@ body {
                         }
                     }
                 }
+            }
+        }
+
+        p {
+            line-height: 1.7;
+        }
+        .img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            opacity: 0.6;
+
+            &.string {
+                background-image: url('../img/string.png');
+            }
+            &.pad {
+                background-image: url('../img/pad.png');
+            }
+            &.lead {
+                background-image: url('../img/lead.png');
             }
         }
     }

@@ -69,6 +69,29 @@ body {
           box-shadow: 0 0 20px 0 rgba(155, 157, 158, 0.2);
   padding: 24px;
 }
+.index_wrap section#opening {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.index_wrap section#opening h1 {
+  font-size: 20px;
+}
+.index_wrap section#opening .music_img {
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/sound.jpg");
+}
 .index_wrap section h4 {
   width: 100%;
   font-size: 16px;
@@ -244,4 +267,22 @@ body {
 }
 .index_wrap section:nth-child(5) ul li p:nth-child(2) {
   font-size: 12px;
+}
+.index_wrap section p {
+  line-height: 1.7;
+}
+.index_wrap section .img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  opacity: 0.6;
+}
+.index_wrap section .img.string {
+  background-image: url("../img/string.png");
+}
+.index_wrap section .img.pad {
+  background-image: url("../img/pad.png");
+}
+.index_wrap section .img.lead {
+  background-image: url("../img/lead.png");
 }
