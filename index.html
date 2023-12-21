@@ -1,207 +1,211 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
 
-        <title>코드찾기</title>
-        <link rel="stylesheet" href="/style/reset.css" />
-        <link rel="stylesheet" href="/style/index.css" />
-    </head>
-    <body>
-        <div class="index_wrap">
-            <header>
-                <ul>
-                    <li><a href="#area1">코드 찾기</a></li>
-                    <li><a href="#area2">샵 붙는 순서</a></li>
-                    <li><a href="#area3">검색하기</a></li>
-                </ul>
-            </header>
+    <title>코드찾기</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <script src="./js/index.js"></script>
+    <script src="./js/transpose.js"></script>
+  </head>
+  <body>
+    <div class="index_wrap">
+      <header>
+        <ul>
+          <li><a href="#area1">조표</a></li>
+          <li><a href="#area3">맞춰보기</a></li>
+          <li><a href="#area4">코드 변경</a></li>
+          <li><a href="#area5">외워보기</a></li>
+        </ul>
+      </header>
 
-            <section id="area1">
-                <h4>조표</h4>
-                <div class="keyImg"></div>
-            </section>
-            <section id="area2">
-                <h4>반음 붙는 순서</h4>
-                <div class="chImg"></div>
-                <p># - 파, 도, 솔, 레, 라, 미, 시</p>
-                <p>각각 F, C, G, D, A, E, B</p>
-                <p>b - 시, 미, 라, 레, 솔, 도, 파</p>
-                <p>각각 B, E, A, D, G, C, F</p>
-            </section>
-            <section id="area3">
-                <h4>맞춰보기</h4>
-                <form id="chordForm">
-                    <input type="text" placeholder="코드를 입력하세요(영문)" id="chordInput" />
-                    <button type="submit">Submit</button>
-                </form>
-                <div class="result">
-                    <p id="chord">?</p>
-                    코드는 샵
-                    <p id="sharp">?</p>
-                    개, 플랫
-                    <p id="flat">?</p>
-                    개 입니다.
-                </div>
-
-                <ul class="checkbox_inner">
-                    <li>C <input type="checkbox" /></li>
-                    <li>D <input type="checkbox" /></li>
-                    <li>E <input type="checkbox" /></li>
-                    <li>F <input type="checkbox" /></li>
-                    <li>G <input type="checkbox" /></li>
-                    <li>A <input type="checkbox" /></li>
-                    <li>B <input type="checkbox" /></li>
-                </ul>
-            </section>
-            <section id="area4">
-                <h4>외워보기</h4>
-
-                <ul>
-                    <li>
-                        <p>C코드</p>
-                        <p>반음 0개</p>
-                    </li>
-                    <li>
-                        <p>Db(=C#)코드</p>
-                        <p>반음 5개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>D코드</p>
-                        <p>반음 2개(샾)</p>
-                    </li>
-                    <li>
-                        <p>Eb(=D#)코드</p>
-                        <p>반음 3개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>E코드</p>
-                        <p>반음 4개(샾)</p>
-                    </li>
-                    <li>
-                        <p>F코드</p>
-                        <p>반음 1개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>Gb(=F#)코드</p>
-                        <p>반음 6개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>G코드</p>
-                        <p>반음 1개(샾)</p>
-                    </li>
-                    <li>
-                        <p>Ab(=G#)코드</p>
-                        <p>반음 4개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>A코드</p>
-                        <p>반음 3개(샾)</p>
-                    </li>
-                    <li>
-                        <p>Bb(=A#)코드</p>
-                        <p>반음 2개(플랫)</p>
-                    </li>
-                    <li>
-                        <p>B코드</p>
-                        <p>반음 5개(샾)</p>
-                    </li>
-                </ul>
-            </section>
+      <section id="area1">
+        <h4>조표</h4>
+        <div class="keyImg"></div>
+      </section>
+      <section id="area2">
+        <h4>반음 붙는 순서</h4>
+        <div class="chImg"></div>
+        <p># - 파, 도, 솔, 레, 라, 미, 시</p>
+        <p>각각 F, C, G, D, A, E, B</p>
+        <p>b - 시, 미, 라, 레, 솔, 도, 파</p>
+        <p>각각 B, E, A, D, G, C, F</p>
+      </section>
+      <section id="area3">
+        <h4>맞춰보기</h4>
+        <form id="chordForm">
+          <input
+            type="text"
+            placeholder="코드를 입력하세요(영문 대문자로)"
+            id="chordInput"
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <div class="result">
+          <p id="chord">?</p>
+          코드는 샵
+          <p id="sharp">?</p>
+          개, 플랫
+          <p id="flat">?</p>
+          개 입니다.
         </div>
 
-        <script>
-            document.getElementById('chordForm').addEventListener('submit', function (e) {
-                e.preventDefault();
+        <ul class="checkbox_inner">
+          <li>C <input type="checkbox" /></li>
+          <li>D <input type="checkbox" /></li>
+          <li>E <input type="checkbox" /></li>
+          <li>F <input type="checkbox" /></li>
+          <li>G <input type="checkbox" /></li>
+          <li>A <input type="checkbox" /></li>
+          <li>B <input type="checkbox" /></li>
+        </ul>
+      </section>
+      <section id="area4">
+        <h4>코드 변경하기</h4>
 
-                const chord = document.getElementById('chordInput').value;
-                let sharpCount = '0';
-                let flatCount = '0';
+        <div class="inner">
+          <div class="chord">
+            <div>
+              <p>원래 키</p>
+              <select
+                name="select"
+                id="oldKey"
+                onchange="updateIntval('oldKey','newKey')"
+              >
+                <option value="A">A</option>
+                <option value="A#">A# (Bb)</option>
+                <option value="B">B</option>
+                <option value="C" selected="selected">C</option>
+                <option value="C#">C# (Db)</option>
+                <option value="D">D</option>
+                <option value="D#">D# (Eb)</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F# (Gb)</option>
+                <option value="G">G</option>
+                <option value="G#">G# (Ab)</option>
+              </select>
+            </div>
 
-                switch (chord) {
-                    case 'C':
-                        sharpCount = 0;
-                        flatCount = 0;
-                        break;
+            <div>
+              <p>새로운 키</p>
+              <select
+                name="select2"
+                id="newKey"
+                onchange="updateIntval('oldKey','newKey')"
+              >
+                <option value="A">A</option>
+                <option value="A#">A# (Bb)</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="C#">C# (Db)</option>
+                <option value="D" selected="selected">D</option>
+                <option value="D#">D# (Eb)</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F# (Gb)</option>
+                <option value="G">G</option>
+                <option value="G#">G# (Ab)</option>
+              </select>
+            </div>
+          </div>
 
-                    case 'D':
-                        sharpCount = 2;
-                        flatCount = 0;
-                        break;
+          <div class="button_inner">
+            <button type="button" id="button" onclick="transpose()">
+              다시 변경하기
+            </button>
+            <button type="button" id="button2" onclick="createField()">
+              칸 추가하기
+            </button>
+          </div>
+        </div>
 
-                    case 'E':
-                        sharpCount = 4;
-                        flatCount = 0;
-                        break;
+        <div id="content">
+          <div>
+            <input type="text" oninput="toUpperCase(this)" />⇒<input
+              type="text"
+            />
+          </div>
+          <div>
+            <input type="text" oninput="toUpperCase(this)" />⇒<input
+              type="text"
+            />
+          </div>
+          <div>
+            <input type="text" oninput="toUpperCase(this)" />⇒<input
+              type="text"
+            />
+          </div>
+          <div>
+            <input type="text" oninput="toUpperCase(this)" />⇒<input
+              type="text"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="area5">
+        <h4>외워보기</h4>
 
-                    case 'F':
-                        sharpCount = 0;
-                        flatCount = 1;
-                        break;
-
-                    case 'G':
-                        sharpCount = 1;
-                        flatCount = 0;
-                        break;
-
-                    case 'A':
-                        sharpCount = 3;
-                        flatCount = 0;
-                        break;
-
-                    case 'B':
-                        sharpCount = 5;
-                        flatCount = 0;
-                        break;
-
-                    case 'Db':
-                        sharpCount = 0;
-                        flatCount = 5;
-                        break;
-
-                    case 'Eb':
-                        sharpCount = 0;
-                        flatCount = 3;
-                        break;
-
-                    case 'F#':
-                        sharpCount = 6;
-                        flatCount = 0;
-                        break;
-
-                    case 'Gb':
-                        sharpCount = 0;
-                        flatCount = 6;
-                        break;
-
-                    case 'Ab':
-                        sharpCount = 0;
-                        flatCount = 4;
-                        break;
-
-                    case 'Bb':
-                        sharpCount = 0;
-                        flatCount = 2;
-                        break;
-
-                    // C#의 경우는 매우 드물게 사용되지만 추가하고 싶다면 다음과 같이 할 수 있습니다.
-                    case 'C#':
-                        sharpCount = 7;
-                        flatCount = 0;
-                        break;
-
-                    default:
-                        sharpCount = '?';
-                        flatCount = '?';
-                        break;
-                }
-
-                // 결과 업데이트
-                document.getElementById('chord').innerText = chord;
-                document.getElementById('sharp').innerText = sharpCount;
-                document.getElementById('flat').innerText = flatCount;
-            });
-        </script>
-    </body>
+        <ul>
+          <li>
+            <p>C코드</p>
+            <p>반음 0개</p>
+          </li>
+          <li>
+            <p>Db(=C#)코드</p>
+            <p>반음 5개(플랫)</p>
+          </li>
+          <li>
+            <p>D코드</p>
+            <p>반음 2개(샾)</p>
+          </li>
+          <li>
+            <p>Eb(=D#)코드</p>
+            <p>반음 3개(플랫)</p>
+          </li>
+          <li>
+            <p>E코드</p>
+            <p>반음 4개(샾)</p>
+          </li>
+          <li>
+            <p>F코드</p>
+            <p>반음 1개(플랫)</p>
+          </li>
+          <li>
+            <p>Gb(=F#)코드</p>
+            <p>반음 6개(플랫)</p>
+          </li>
+          <li>
+            <p>G코드</p>
+            <p>반음 1개(샾)</p>
+          </li>
+          <li>
+            <p>Ab(=G#)코드</p>
+            <p>반음 4개(플랫)</p>
+          </li>
+          <li>
+            <p>A코드</p>
+            <p>반음 3개(샾)</p>
+          </li>
+          <li>
+            <p>Bb(=A#)코드</p>
+            <p>반음 2개(플랫)</p>
+          </li>
+          <li>
+            <p>B코드</p>
+            <p>반음 5개(샾)</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script language="javascript">
+      parentId = "content";
+      createFieldFirst();
+    </script>
+  </body>
 </html>
